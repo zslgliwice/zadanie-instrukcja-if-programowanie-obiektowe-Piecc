@@ -22,8 +22,19 @@
 	
 		function sprawdz()
 		{
-			
-			
+			var imie = document.getElementById("imie").value;
+			var wiek = document.getElementById("wiek").value;
+			var wynik = document.getElementById("wynik");
+
+			if ((imie.toLowerCase() === "brad" || imie.toLowerCase() === "morgan") && wiek >= 18) {
+				wynik.innerHTML = "Gratulacje, " + imie + "! Możesz wziąć udział w seansie za darmo.";
+			} else if (wiek < 16) {
+				wynik.innerHTML = "Przykro nam, " + imie + ", ale nie możesz wziąć udziału w seansie.";
+			} else if (wiek >= 16 && wiek <= 17) {
+				wynik.innerHTML = "Możesz wziąć udział w seansie, " + imie + ", jeśli jesteś z opiekunem. Cena biletu: 12 zł.";
+			} else {
+				wynik.innerHTML = "Możesz wziąć udział w seansie, " + imie + ". Cena biletu: 18 zł.";
+			}
 		}
 
 	</script>
